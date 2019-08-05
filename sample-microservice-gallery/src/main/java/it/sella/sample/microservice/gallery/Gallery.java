@@ -11,6 +11,8 @@ public class Gallery {
 
     private GalleryImageList images;
 
+    private String servicename;
+
     public Integer getId() {
         return id;
     }
@@ -25,5 +27,13 @@ public class Gallery {
 
     public void setImages(final GalleryImageList images) {
         this.images = images;
+    }
+
+    public String getServicename() {
+        return servicename;
+    }
+
+    public void setServicename(String servicename) {
+        this.servicename = servicename;
     }
 }

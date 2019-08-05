@@ -2,11 +2,11 @@ package it.sella.sample.microservice.image.samplemicroserviceimage;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.TimeoutException;
 
 /**
  * Created by gbs04154 on 03-01-2019.
@@ -27,12 +27,9 @@ public class ImageController {
                 new Image(3, "The Last Traction Hero", "https://www.imdb.com/title/tt0096697/mediaviewer/rm1445594112"));
     }
 
-//    @RequestMapping("/images")
-@RequestMapping("/images")
-    public ImageList getImages() {
-//        if(true) throw new RuntimeException("break Image service");
+    @RequestMapping("/images")
+    public ImageList getImages() throws TimeoutException {
         return new ImageList(images, env.getProperty("local.server.port"));
     }
-
 
 }

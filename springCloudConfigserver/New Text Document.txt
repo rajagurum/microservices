@@ -1,0 +1,34 @@
+application based
+---------------------------
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://C:/Rajaguru/Projects/springCloudConfigserver/git-localconfig-repo
+          repos:
+              limits-service:
+                pattern: limits-service*/test*
+                uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-1
+              message-service:
+                pattern: message-service*
+                uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-2       
+              
+profile based
+---------------------------
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://C:/Rajaguru/Projects/springCloudConfigserver/git-localconfig-repo
+          repos:
+            dev:
+              pattern:
+                - '*/dev'
+               uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-2 
+            test:
+              pattern:
+                - '*/test'
+                uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-1

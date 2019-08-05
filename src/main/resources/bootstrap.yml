@@ -1,0 +1,14 @@
+#spring.cloud.config.server.git.uri=file://D:/IntelliJProject/Git/springCloudConfigserver/git-localconfig-repo
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: file://C:/Rajaguru/Projects/springCloudConfigserver/git-localconfig-repo
+          repos:
+              limits-service:
+                pattern: limits-service*/test*
+                uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-1
+              message-service:
+                pattern: message-service*
+                uri: file://C:/Rajaguru/Projects/springCloudConfigserver/multiple-repo-2
